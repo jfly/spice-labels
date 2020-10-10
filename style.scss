@@ -1,7 +1,19 @@
+$spice-font-family: fantasy;
+$spice-name-font-size: 0.3in;
+$spice-font-top-offset-magic-number: 0;
+
+$spice-font-family: consolas;
+$spice-name-font-size: 0.27in;
+// Consolas glyphs apparently aren't perfectly vertically centered? Yikes, hack
+// around that here.
+$spice-font-top-offset-magic-number: 4px;
+
+$digit-font-family: sans-serif;
 $digit-cell-size: 0.075in;
 $digit-font-size: 0.075in;
-$spice-name-font-size: 0.3in;
 $years-padding: 0.2in;
+
+$spice-name-margin: $years-padding + $digit-cell-size + 0.2in;
 
 body {
   margin: 0;
@@ -41,14 +53,28 @@ body {
     align-items: center;
     position: relative;
     text-align: center;
+    font-size: $spice-name-font-size;
 
-    .spice-name {
-      font-size: $spice-name-font-size;
-      font-family: fantasy;
+    .spice-name-wrapper {
+      width: calc(100% - #{$spice-name-margin});
+      line-height: 0.6;
+      font-family: $spice-font-family;
+      margin-top: $spice-font-top-offset-magic-number;
       text-transform: uppercase;
-      margin-left: $years-padding + $digit-cell-size;
-      margin-right: $years-padding + $digit-cell-size;
       overflow-wrap: anywhere;
+
+      .spice-name {
+        line-height: normal;
+
+        .spice-name-part {
+          font-size: 0.9em;
+        }
+      }
+
+      .spice-subname {
+        font-size: 0.6em;
+        text-transform: lowercase;
+      }
     }
 
     .label-oversize {
@@ -72,7 +98,7 @@ body {
         height: 100%;
 
         .digit-bg {
-          font-family: monospace;
+          font-family: $digit-font-family;
           background-color: white;
           color: black;
           position: absolute;

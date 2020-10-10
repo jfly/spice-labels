@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Spice } from "./spices";
 import Label from "./Label";
 import { chunkify } from "./util";
 
@@ -7,10 +8,10 @@ import { chunkify } from "./util";
 const COLUMNS_PER_SHEET = 4;
 const ROWS_PER_SHEET = 5;
 
-type SpicesProps = {
-  spices: string[];
+type SpiceSheetsProps = {
+  spices: Spice[];
 };
-function Spices({ spices }: SpicesProps) {
+function SpiceSheets({ spices }: SpiceSheetsProps) {
   const labelsPerSheet = COLUMNS_PER_SHEET * ROWS_PER_SHEET;
   return (
     <>
@@ -22,7 +23,7 @@ function Spices({ spices }: SpicesProps) {
 }
 
 type SheetProps = {
-  spices: string[];
+  spices: Spice[];
 };
 function Sheet({ spices }: SheetProps) {
   return (
@@ -34,4 +35,4 @@ function Sheet({ spices }: SheetProps) {
   );
 }
 
-export default Spices;
+export default SpiceSheets;

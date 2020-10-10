@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es6", "dom"],
+    "lib": ["ES2018", "dom"],
     "esModuleInterop": true,
     "jsx": "react"
   }
