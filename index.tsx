@@ -1,6 +1,18 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-const App = () => <h1>Hello!</h1>;
+import Label from "./Label";
+
+const SPICES = [
+  'ginger',
+  'tumeric',
+  'paprika',
+];
+
+function App() {
+  return <>
+    {SPICES.map(spice => <Label key={spice} spice={spice} />)}
+  </>;
+}
 
 ReactDom.render(<App />, document.getElementById("app"));
