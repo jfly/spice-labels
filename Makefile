@@ -2,6 +2,10 @@
 check:
 	npm run lint
 
-.PHONE: run
+.PHONY: run
 run:
-	npm start
+	npm run start
+
+.PHONY: fix
+fix:
+	npm run fix

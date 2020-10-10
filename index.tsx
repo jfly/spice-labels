@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-import Label from "./Label";
+import Spices from "./Spices";
 import SPICES from "./spices";
 
 function App() {
-  return <div className="sheet">
-    {SPICES.map((spice, i) => <Label key={i} spice={spice} />)}
-  </div>;
+  return <Spices spices={SPICES} />;
 }
 
 ReactDom.render(<App />, document.getElementById("app"));
