@@ -4,7 +4,7 @@ type LabelProps = {
   spice: string;
 };
 function Label({spice}: LabelProps) {
-  return <div>{spice}</div>;
+  return <div className="label">{spice}</div>;
 }
 
 export default Label;
