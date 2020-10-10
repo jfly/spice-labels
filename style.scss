@@ -24,6 +24,9 @@ body {
   box-sizing: border-box;
 }
 
+// TODO: explain
+$printer-hack: 0.5mm;
+
 .sheet {
   display: grid;
   // https://www.onlinelabels.com/templates/blank/ol914?type=pdf
@@ -31,8 +34,8 @@ body {
   height: 11in;
   grid-template-columns: repeat(4, 1.75in);
   grid-template-rows: repeat(5, 1.75in);
-  padding-top: 0.4in; // "Top Margin"
-  padding-bottom: 0.4in; // "Bottom Margin"
+  padding-top: 0.4in + $printer-hack; // "Top Margin"
+  padding-bottom: 0.4in - $printer-hack; // "Bottom Margin"
   padding-left: 0.4453in; // "Left Margin"
   padding-right: 0.4453in; // "Right Margin"
   column-gap: 0.20312in; // "Vertical Spacing"
