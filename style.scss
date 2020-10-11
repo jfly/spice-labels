@@ -6,12 +6,15 @@ $spice-font-family: consolas;
 $spice-name-font-size: 0.27in;
 // Consolas glyphs apparently aren't perfectly vertically centered? Yikes, hack
 // around that here.
-$spice-font-top-offset-magic-number: 4px;
+$spice-font-top-offset-magic-number: 0px;
 
 $digit-font-family: sans-serif;
 $digit-cell-size: 0.075in;
 $digit-font-size: 0.075in;
 $years-padding: 0.2in;
+
+// TODO: explain
+$printer-hack: 0mm;
 
 $spice-name-margin: $years-padding + $digit-cell-size + 0.2in;
 
@@ -23,9 +26,6 @@ body {
 * {
   box-sizing: border-box;
 }
-
-// TODO: explain
-$printer-hack: 0.5mm;
 
 .sheet {
   display: grid;
