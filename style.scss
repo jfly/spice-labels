@@ -13,8 +13,9 @@ $digit-cell-size: 0.075in;
 $digit-font-size: 0.075in;
 $years-padding: 0.2in;
 
-// TODO: explain
-$printer-hack: 0mm;
+// Printer tracking can be a *pain*. Play with these as necessary, and pray.
+$printer-vertical-hack: 0mm;
+$printer-horizontal-hack: -2mm;
 
 $spice-name-margin: $years-padding + $digit-cell-size + 0.2in;
 
@@ -34,10 +35,10 @@ body {
   height: 11in;
   grid-template-columns: repeat(4, 1.75in);
   grid-template-rows: repeat(5, 1.75in);
-  padding-top: 0.4in + $printer-hack; // "Top Margin"
-  padding-bottom: 0.4in - $printer-hack; // "Bottom Margin"
-  padding-left: 0.4453in; // "Left Margin"
-  padding-right: 0.4453in; // "Right Margin"
+  padding-top: 0.4in + $printer-vertical-hack; // "Top Margin"
+  padding-bottom: 0.4in - $printer-vertical-hack; // "Bottom Margin"
+  padding-left: 0.4453in + $printer-horizontal-hack; // "Left Margin"
+  padding-right: 0.4453in - $printer-horizontal-hack; // "Right Margin"
   column-gap: 0.20312in; // "Vertical Spacing"
   row-gap: 0.3625in; // "Horizontal Spacing"
 

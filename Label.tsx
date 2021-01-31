@@ -10,9 +10,12 @@ const DIGIT_ROTATION_DEGRESS = 8;
 const DIGITS_PER_YEAR = 4;
 
 type LabelProps = {
-  spice: Spice;
+  spice: Spice | null;
 };
 function Label({ spice }: LabelProps) {
+  if (!spice) {
+    return <div />;
+  }
   const yearRotationDegress = 360 / YEAR_COUNT;
   const initialRotationOffsetDegrees =
     (yearRotationDegress - (DIGITS_PER_YEAR - 1) * DIGIT_ROTATION_DEGRESS) / 2;

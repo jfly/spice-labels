@@ -7,17 +7,19 @@ type Spice = {
 const NBSP = "\u00A0";
 
 const rawSpiceNames = [
+  "Adobo (mexican style)",
   "Allspice",
   "Basil",
   "Cardamom (ground)",
   "Cardamom (pods)",
   "Cayenne",
+  "Chile (kimchi)",
   "Chile Powder (ancho)",
   "Chile Powder (blend)",
   "Chile Powder (chipotle)",
   "Chile Powder (Santa Fe)",
-  "Cinnamon (Vietnamese)",
   "Cinnamon (sticks)",
+  "Cinnamon (Vietnamese)",
   "Cloves",
   "Coriander (ground)",
   "Coriander (whole)",
@@ -37,6 +39,7 @@ const rawSpiceNames = [
   "Oregano",
   "Paprika",
   "Pumpkin Pie",
+  "Ras el Hanout",
   `Red${NBSP}Pepper Flakes`,
   "Rosemary",
   "Sesame Seeds (white)",
@@ -59,18 +62,18 @@ const SPICES: Spice[] = [];
 const spiceRe = /^(?<name>.*?)( \((?<subname>.*)\))?$/;
 
 for (const rawSpice of rawSpiceNames) {
-  if (rawSpice.trim().length == 0) {
-    continue;
+  if (!rawSpice) {
+    SPICES.push(null);
+  } else {
+    const {
+      groups: { name, subname },
+    } = spiceRe.exec(rawSpice);
+    SPICES.push({
+      name: name,
+      subname: subname,
+      scale: specialScales[rawSpice] ?? 1,
+    });
   }
-
-  const {
-    groups: { name, subname },
-  } = spiceRe.exec(rawSpice);
-  SPICES.push({
-    name: name,
-    subname: subname,
-    scale: specialScales[rawSpice] ?? 1,
-  });
 }
 
 export default SPICES;
