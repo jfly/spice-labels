@@ -1,11 +1,15 @@
+.bootstrapped: package.json package-lock.json
+	npm install
+	touch .bootstrapped
+
 .PHONY: check
-check:
+check: .bootstrapped
 	npm run lint
 
 .PHONY: run
-run:
+run: .bootstrapped
 	npm run start
 
 .PHONY: fix
-fix:
+fix: .bootstrapped
 	npm run fix

@@ -53,7 +53,7 @@ type SpiceName = typeof rawSpiceNames[number];
 
 const specialScales: Partial<Record<SpiceName, number>> = {
   [`Red${NBSP}Pepper Flakes`]: 0.8,
-  "Umami Sea Salt": 0.8,
+  [`Umami Sea${NBSP} Salt`]: 0.8,
   "Everything Bagel": 0.9,
 };
 
