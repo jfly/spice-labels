@@ -12,7 +12,7 @@ type ChunkifyOptionsProps = {
 function chunkify<T>(
   arr: T[],
   chunkSize: number,
-  { excludeLeftovers }: ChunkifyOptionsProps = {}
+  { excludeLeftovers }: ChunkifyOptionsProps = {},
 ): T[][] {
   const chunks: T[][] = [];
   let chunk: T[] = [];

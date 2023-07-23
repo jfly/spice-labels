@@ -29,7 +29,7 @@ function Sheet({ spices }: SheetProps) {
   return (
     <div className="sheet">
       {spices.map((spice, i) => (
-        <Label key={i} spice={spice} />
+        <Label key={i} spice={spice} includeYears={false} />
       ))}
     </div>
   );

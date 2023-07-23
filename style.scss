@@ -1,4 +1,3 @@
-$spice-font-family: fantasy;
 $spice-name-font-size: 0.3in;
 $spice-font-top-offset-magic-number: 0;
 
@@ -15,7 +14,8 @@ $years-padding: 0.2in;
 
 // Printer tracking can be a *pain*. Play with these as necessary, and pray.
 $printer-vertical-hack: 0mm;
-$printer-horizontal-hack: -2mm;
+//<<< $printer-horizontal-hack: -2mm;
+$printer-horizontal-hack: 0mm; //<<<
 
 $spice-name-margin: $years-padding + $digit-cell-size + 0.2in;
 
@@ -26,6 +26,11 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "consolas";
+  src: url("./fonts/consola.ttf") format("truetype");
 }
 
 .sheet {

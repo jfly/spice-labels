@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import SpiceSheets from "./SpiceSheets";
 import SPICES from "./spices";
@@ -8,4 +8,6 @@ function App() {
   return <SpiceSheets spices={SPICES} />;
 }
 
-ReactDom.render(<App />, document.getElementById("app"));
+const container = document.getElementById("app");
+const root = createRoot(container);
+root.render(<App />);

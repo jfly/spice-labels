@@ -11,8 +11,9 @@ const DIGITS_PER_YEAR = 4;
 
 type LabelProps = {
   spice: Spice | null;
+  includeYears: boolean;
 };
-function Label({ spice }: LabelProps) {
+function Label({ spice, includeYears }: LabelProps) {
   if (!spice) {
     return <div />;
   }
@@ -36,17 +37,19 @@ function Label({ spice }: LabelProps) {
         <span className="spice-name">{splitName}</span>
         <span className="spice-subname">{spice.subname}</span>
       </span>
-      <div className="years-path">
-        {range(START_YEAR, START_YEAR + YEAR_COUNT).map((year, i) => (
-          <Year
-            key={year}
-            year={year}
-            rotationDegrees={
-              initialRotationOffsetDegrees + i * yearRotationDegress
-            }
-          />
-        ))}
-      </div>
+      {includeYears && (
+        <div className="years-path">
+          {range(START_YEAR, START_YEAR + YEAR_COUNT).map((year, i) => (
+            <Year
+              key={year}
+              year={year}
+              rotationDegrees={
+                initialRotationOffsetDegrees + i * yearRotationDegress
+              }
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
